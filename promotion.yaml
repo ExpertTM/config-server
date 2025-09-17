@@ -1,6 +1,9 @@
 server:
   port: ${SERVER_PORT}
 
+test1: 2
+test2: 1
+
 app:
   accounting:
     url: ${ACCOUNTING_URL}
