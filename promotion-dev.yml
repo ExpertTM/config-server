@@ -34,7 +34,3 @@ management:
   health:
     circuitbreakers:
       enabled: true
-
-test1: 3
-test2: 2
-test3: 1
