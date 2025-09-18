@@ -11,8 +11,6 @@ resilience4j:
           seconds: 5
         permitted-number-of-calls-in-half-open-state: 3
         event-consumer-buffer-size: 20
-        ignore-exceptions:
-          - by.javaguru.jdmik7.relocationservice.api.exception.ServiceBadRequestException
     instances:
       accounting-service:
         base-config: default
@@ -26,8 +24,6 @@ resilience4j:
       default:
         max-attempts: 3
         wait-duration: 10s
-        ignore-exceptions:
-          - by.javaguru.jdmik7.relocationservice.api.exception.ServiceBadRequestException
     instances:
       accounting-service:
         base-config: default
