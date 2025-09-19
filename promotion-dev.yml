@@ -24,6 +24,11 @@ resilience4j:
       default:
         max-attempts: 3
         wait-duration: 10s
+        exponential-backoff-multiplier: 2
+        enable-exponential-backoff: true
+        retry-exceptions:
+          - ru.javaguru.jdmik7.promotion.exception.TooManyRequestsException
+          - jakarta.ws.rs.ServiceUnavailableException
     instances:
       accounting-service:
         base-config: default
