@@ -29,6 +29,8 @@ resilience4j:
         retry-exceptions:
           - ru.javaguru.jdmik7.promotion.exception.TooManyRequestsException
           - jakarta.ws.rs.ServiceUnavailableException
+        ignore-exceptions:
+          - io.github.resilience4j.circuitbreaker.CallNotPermittedException  
     instances:
       accounting-service:
         base-config: default
