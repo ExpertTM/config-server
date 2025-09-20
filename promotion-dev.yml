@@ -12,8 +12,8 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 3
         event-consumer-buffer-size: 20
         record-exceptions:
-          - com.myapp.exception.AccountingServiceUnavailableException
-          - com.myapp.exception.AccountingTooManyRequestsException
+          - ru.javaguru.jdmik7.promotion.exception.AccountingTooManyRequestsException
+          - ru.javaguru.jdmik7.promotion.exception.AccountingServiceUnavailableException
           - java.net.SocketTimeoutException
         ignore-exceptions:
           - ru.javaguru.jdmik7.promotion.exception.AccountingNotFoundException
