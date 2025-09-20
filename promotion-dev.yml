@@ -11,6 +11,13 @@ resilience4j:
           seconds: 5
         permitted-number-of-calls-in-half-open-state: 3
         event-consumer-buffer-size: 20
+        record-exceptions:
+          - com.myapp.exception.AccountingServiceUnavailableException
+          - com.myapp.exception.AccountingTooManyRequestsException
+          - java.net.SocketTimeoutException
+        ignore-exceptions:
+          - ru.javaguru.jdmik7.promotion.exception.AccountingNotFoundException
+          - ru.javaguru.jdmik7.promotion.exception.AccountingBadRequestException
     instances:
       accounting-service:
         base-config: default
@@ -27,8 +34,9 @@ resilience4j:
         exponential-backoff-multiplier: 2
         enable-exponential-backoff: true
         retry-exceptions:
-          - ru.javaguru.jdmik7.promotion.exception.TooManyRequestsException
-          - jakarta.ws.rs.ServiceUnavailableException
+          - ru.javaguru.jdmik7.promotion.exception.AccountingTooManyRequestsException
+          - ru.javaguru.jdmik7.promotion.exception.AccountingServiceUnavailableException
+          - java.net.SocketTimeoutException
         ignore-exceptions:
           - io.github.resilience4j.circuitbreaker.CallNotPermittedException  
     instances:
