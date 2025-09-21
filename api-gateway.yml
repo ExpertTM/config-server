@@ -1,0 +1,31 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: API-GATEWAY
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8079/realms/m.tyumentsev/protocol/openid-connect/certs
+  main:
+    allow-bean-definition-overriding: true
+
+  cloud:
+    gateway:
+      routes:
+        - id: accounting-service
+          uri: lb://ACCOUNTING-SERVICE
+          predicates:
+            - Path=/accounting/**
+
+        - id: security-service
+          uri: lb://SECURITY-SERVICE
+          predicates:
+            - Path=/security/**
+
+        - id: profiler-service
+          uri: lb://PROFILER-SERVICE
+          predicates:
+            - Path=/profiler/**
