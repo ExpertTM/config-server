@@ -16,7 +16,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8079/realms/m.tyumentsev 
+          jwk-set-uri: http://localhost:8079/realms/m.tyumentsev/protocol/openid-connect/certs
 
   datasource:
     url: ${DATABASE_URL}
