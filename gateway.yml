@@ -34,4 +34,4 @@ spring:
         - id: promotion-service
           uri: lb://PROMOTION-SERVICE
           predicates:
-            - Path=/promotion/**  
+            - Path=/api/v1/promotion/**  
