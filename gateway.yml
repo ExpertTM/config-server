@@ -30,3 +30,8 @@ spring:
           uri: lb://PROFILER-SERVICE
           predicates:
             - Path=/profiler/**
+
+        - id: promotion-service
+          uri: lb://PROMOTION-SERVICE
+          predicates:
+            - Path=/promotion/**  
