@@ -12,7 +12,14 @@ app:
 spring:
   application:
     name: promotion-service
-  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8079/realms/m.tyumentsev/protocol/openid-connect/certs
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
 
   datasource:
     url: ${DATABASE_URL}
