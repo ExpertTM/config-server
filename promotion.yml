@@ -19,7 +19,6 @@ spring:
           issuer-uri: ${RESOURCE_SERVER_URL}/realms/${REALM}
   main:
     allow-bean-definition-overriding: true
-    # web-application-type: reactive
 
   datasource:
     url: ${DATABASE_URL}
