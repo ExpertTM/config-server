@@ -19,7 +19,7 @@ spring:
           jwk-set-uri: http://localhost:8079/realms/m.tyumentsev/protocol/openid-connect/certs
   main:
     allow-bean-definition-overriding: true
-    web-application-type: reactive
+    # web-application-type: reactive
 
   datasource:
     url: ${DATABASE_URL}
