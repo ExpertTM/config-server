@@ -8,8 +8,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          # jwk-set-uri: http://localhost:8079/realms/m.tyumentsev/protocol/openid-connect/certs
-          issuer-uri: http://localhost:8079/realms/m.tyumentsev
+          issuer-uri: ${RESOURCE_SERVER_URL}/realms/${REALM}
   main:
     allow-bean-definition-overriding: true
     web-application-type: reactive
