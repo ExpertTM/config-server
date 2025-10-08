@@ -1,0 +1,28 @@
+  kafka:
+    bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+    properties:
+      spring.json.trusted.packages: "ru.javaguru.jdmik7.promotion.config"
+      retry:
+        backoff:
+          interval.ms: 1000
+          max-attempts: 3
+    producer:
+      key-serializer: "org.apache.kafka.common.serialization.UUIDSerializer"
+      value-serializer: "org.springframework.kafka.support.serializer.JsonSerializer"
+      acks: all
+      retries: 10
+      properties:
+        topics:
+          accounting: "allocation-created-events-topic"
+          security: "security-created-events-topic"
+        delivery.timeout.ms: 20000
+        linger.ms: 0
+        request.timeout.ms: 10000
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+    consumer:
+      group-id: promotion-service-group
+      auto-offset-reset: latest
+      properties:
+        topics:
+          promotion: "promotion-created-events-topic"
