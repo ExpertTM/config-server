@@ -4,7 +4,7 @@ spring:
 
 kafka:
   topics:
-    notification: ${ACCOUNTING_TOPIC}
+    notification: ${NOTIFICATION_TOPIC}
   topic-properties:
     name: ${NOTIFICATION_TOPIC}
     partitions: 3
