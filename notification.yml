@@ -3,6 +3,8 @@ spring:
     name: NOTIFICATION-SERVICE
 
 kafka:
+  topics:
+    notification: ${ACCOUNTING_TOPIC}
   topic-properties:
     name: ${NOTIFICATION_TOPIC}
     partitions: 3
