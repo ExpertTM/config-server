@@ -1,6 +1,10 @@
 spring:
   application:
     name: NOTIFICATION-SERVICE
+  kafka:
+    consumer:
+      group-id: notification-service-group
+      auto-offset-reset: latest  
 
 app:
   kafka:
