@@ -1,6 +1,10 @@
 spring:
   application:
     name: SECURITY-SERVICE
+  kafka:
+    consumer:
+      group-id: security-service-group
+      auto-offset-reset: latest  
 
 app:
   kafka:
