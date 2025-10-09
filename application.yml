@@ -26,8 +26,6 @@ spring:
     consumer:
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      group-id: promotion-service-group
-      auto-offset-reset: latest
       properties:
         spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.UUIDDeserializer
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
