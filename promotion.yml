@@ -8,6 +8,21 @@ app:
     url: ${SECURITY_URL}
   profile:
     url: ${PROFILE_URL}
+  kafka:
+    topics:
+      promotion: ${PROMOTION_TOPIC}
+      accounting: ${ACCOUNTING_TOPIC}
+      security: ${SECURITY_TOPIC}
+      profiler: ${PROFILER_TOPIC}
+      notification: ${NOTIFICATION_TOPIC}
+    topic-properties:
+      name: ${PROMOTION_TOPIC}
+      partitions: 3
+      replicas: 3
+      min-in-sync-replicas: 2
+    retry:
+      interval: 1000
+      max-attempts: 2  
 
 spring:
   application:
