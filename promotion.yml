@@ -27,6 +27,10 @@ app:
 spring:
   application:
     name: promotion-service
+  kafka:
+    consumer:
+      group-id: accounting-service-group
+      auto-offset-reset: latest  
   security:
     oauth2:
       resourceserver:
