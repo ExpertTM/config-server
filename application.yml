@@ -15,6 +15,7 @@ spring:
     producer:
       key-serializer: "org.apache.kafka.common.serialization.UUIDSerializer"
       value-serializer: "org.springframework.kafka.support.serializer.JsonSerializer"
+      transaction-id-prefix: promotion-service-${random.value}-
       acks: all
       retries: 10
       properties:
@@ -39,3 +40,8 @@ management:
   otlp:
     tracing:
       endpoint: ${JAEGER_URL:http://localhost:4318/v1/traces}
+
+logging:
+  level:
+    org.springframework.kafka.transaction: TRACE
+    org.springframework.transaction: TRACE      
