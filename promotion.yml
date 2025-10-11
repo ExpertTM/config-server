@@ -32,7 +32,7 @@ spring:
       transaction-id-prefix: promotion-service-${random.value}-
     consumer:
       group-id: promotion-service-group
-      auto-offset-reset: latest  
+      auto-offset-reset: earliest  
   security:
     oauth2:
       resourceserver:
