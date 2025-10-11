@@ -31,7 +31,7 @@ spring:
     producer:
       transaction-id-prefix: promotion-service-${random.value}-
     consumer:
-      group-id: accounting-service-group
+      group-id: promotion-service-group
       auto-offset-reset: latest  
   security:
     oauth2:
