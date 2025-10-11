@@ -15,7 +15,6 @@ spring:
     producer:
       key-serializer: "org.apache.kafka.common.serialization.UUIDSerializer"
       value-serializer: "org.springframework.kafka.support.serializer.JsonSerializer"
-      transaction-id-prefix: promotion-service-${random.value}-
       acks: all
       retries: 10
       properties:
