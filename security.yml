@@ -4,7 +4,7 @@ spring:
   kafka:
     consumer:
       group-id: security-service-group
-      auto-offset-reset: latest  
+      auto-offset-reset: earliest  
 
 app:
   kafka:
