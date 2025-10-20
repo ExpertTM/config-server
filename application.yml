@@ -10,8 +10,6 @@ eureka:
 spring:
   kafka:
     bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
-    properties:
-      spring.json.trusted.packages: ${TRUSTED_PACKAGES}
     producer:
       key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -28,6 +26,7 @@ spring:
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
+        spring.json.trusted.packages: ${TRUSTED_PACKAGES}
         spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.UUIDDeserializer
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
 
