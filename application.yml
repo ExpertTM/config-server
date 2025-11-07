@@ -42,4 +42,5 @@ management:
 logging:
   level:
     org.springframework.kafka.transaction: TRACE
-    org.springframework.transaction: TRACE      
+    org.springframework.transaction: TRACE 
+    org.hibernate.type.descriptor.sql: TRACE
