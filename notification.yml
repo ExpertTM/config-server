@@ -2,6 +2,8 @@ spring:
   application:
     name: NOTIFICATION-SERVICE
   kafka:
+    producer:
+      transaction-id-prefix: notification-service-${random.value}-
     consumer:
       group-id: notification-service-group
       auto-offset-reset: earliest  
