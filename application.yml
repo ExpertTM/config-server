@@ -22,7 +22,6 @@ spring:
         enable.idempotence: true
         max.in.flight.requests.per.connection: 5
     consumer:
-      isolation-level: read_committed
       key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
