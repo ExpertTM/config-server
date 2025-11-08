@@ -2,6 +2,8 @@ spring:
   application:
     name: SECURITY-SERVICE
   kafka:
+    producer:
+      transaction-id-prefix: security-service-${random.value}-
     consumer:
       group-id: security-service-group
       auto-offset-reset: earliest  
