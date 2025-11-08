@@ -37,6 +37,7 @@ spring:
     producer:
       transaction-id-prefix: promotion-service-${random.value}-
     consumer:
+      isolation-level: read_committed
       group-id: promotion-service-group
       auto-offset-reset: earliest
   security:
