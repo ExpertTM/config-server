@@ -2,6 +2,8 @@ spring:
   application:
     name: ACCOUNTING-SERVICE
   kafka:
+    producer:
+      transaction-id-prefix: accounting-service-${random.value}-
     consumer:
       group-id: accounting-service-group
       auto-offset-reset: earliest   
